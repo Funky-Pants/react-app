@@ -17,6 +17,7 @@ import Users from './pages/Users';
 import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import reducers from "./Redux/Redux";
+import ApplicationContextProvider from './Context/ApplicationContext';
 
 const store = createStore(reducers, applyMiddleware(thunk))
 
@@ -83,6 +84,9 @@ function App() {
         {/* </div> */}
       </Router>
     </Provider>
+    <ApplicationContextProvider>
+        <ConsumerContext/>
+    </ApplicationContextProvider>
   );
 }
 
